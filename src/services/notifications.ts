@@ -6,14 +6,17 @@ Notifications.setNotificationHandler({
   handleNotification: async () => ({
     shouldShowBanner: true,
     shouldShowList: true,
-    shouldPlaySound: false,
-    shouldSetBadge: false,
+    shouldPlaySound: true,
+    shouldSetBadge: true,
   }),
 });
 
 export async function prepareLocalNotifications() {
   if (Platform.OS === 'web') {
-    return false;
+    if (typeof window !== 'undefined' && 'Notification' in window && window.Notification.permission === 'default') {
+      try { await window.Notification.requestPermission(); } catch {}
+    }
+    return typeof window !== 'undefined' && 'Notification' in window && window.Notification.permission === 'granted';
   }
 
   const settings = await Notifications.getPermissionsAsync();
@@ -28,6 +31,15 @@ export async function prepareLocalNotifications() {
 
 export async function sendLocalNotification(notification: AppNotification) {
   if (Platform.OS === 'web') {
+    if (typeof window !== 'undefined' && 'Notification' in window && window.Notification.permission === 'granted') {
+      try {
+        new window.Notification(notification.title, {
+          body: notification.body,
+          icon: '/favicon.ico',
+          tag: notification.orderId ?? notification.id,
+        });
+      } catch {}
+    }
     return;
   }
 
@@ -35,6 +47,7 @@ export async function sendLocalNotification(notification: AppNotification) {
     content: {
       title: notification.title,
       body: notification.body,
+      sound: 'default',
       data: { orderId: notification.orderId },
     },
     trigger: null,

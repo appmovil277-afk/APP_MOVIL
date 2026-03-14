@@ -28,15 +28,18 @@ export type PayoutRule =
   | 'Contra entrega';
 
 export type NavigationTab =
+  | 'home'
   | 'dashboard'
   | 'solicitudes'
   | 'administracion'
   | 'flujo'
+  | 'historial'
   | 'notificaciones'
   | 'clientes'
   | 'equipo'
   | 'mejoras'
-  | 'mas';
+  | 'mas'
+  | 'ajustes';
 
 export type EmployeeAvailability = 'Disponible' | 'Ocupado' | 'Ausente';
 
@@ -89,6 +92,7 @@ export type WorkflowStage = {
   note: string;
   startedAt?: string;
   completedAt?: string;
+  paidAt?: string;
 };
 
 export type FurnitureOrder = {
@@ -130,6 +134,8 @@ export type Employee = {
   availability: EmployeeAvailability;
   specialties: string[];
   performance: number;
+  paymentMethods?: string[];
+  paymentAccounts?: Record<string, string>;
 };
 
 export type AuthSession = {

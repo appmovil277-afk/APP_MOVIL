@@ -21,6 +21,8 @@ export type AppTheme = {
   glowBlue: string;
   glowPink: string;
   glowMint: string;
+  glowIndigo: string;
+  glowAmber: string;
   buttonText: string;
   backgroundTop: string;
   backgroundMid: string;
@@ -61,13 +63,15 @@ export const darkTheme: AppTheme = {
   glassStrong: 'rgba(16, 27, 50, 0.82)',
   glassEdge: 'rgba(255, 255, 255, 0.16)',
   glassEdgeStrong: 'rgba(120, 230, 255, 0.28)',
-  glowBlue: 'rgba(92, 225, 255, 0.32)',
-  glowPink: 'rgba(255, 107, 145, 0.24)',
-  glowMint: 'rgba(123, 255, 182, 0.18)',
+  glowBlue: 'rgba(56, 189, 248, 0.55)',
+  glowPink: 'rgba(232, 121, 249, 0.42)',
+  glowMint: 'rgba(52, 211, 153, 0.36)',
+  glowIndigo: 'rgba(99, 102, 241, 0.28)',
+  glowAmber: 'rgba(251, 191, 36, 0.18)',
   buttonText: '#071221',
-  backgroundTop: '#06101f',
-  backgroundMid: '#0a1831',
-  backgroundBottom: '#123052',
+  backgroundTop: '#030712',
+  backgroundMid: '#060e1f',
+  backgroundBottom: '#0a1528',
   statusTrack: 'rgba(255,255,255,0.18)',
   inputFill: 'rgba(255,255,255,0.06)',
   inputEdge: 'rgba(255,255,255,0.12)',
@@ -104,13 +108,15 @@ export const lightTheme: AppTheme = {
   glassStrong: 'rgba(255, 255, 255, 0.92)',
   glassEdge: 'rgba(16, 32, 56, 0.1)',
   glassEdgeStrong: 'rgba(18, 126, 162, 0.24)',
-  glowBlue: 'rgba(18, 126, 162, 0.18)',
-  glowPink: 'rgba(213, 72, 115, 0.14)',
-  glowMint: 'rgba(34, 173, 124, 0.12)',
+  glowBlue: 'rgba(18, 126, 162, 0.22)',
+  glowPink: 'rgba(213, 72, 115, 0.18)',
+  glowMint: 'rgba(34, 173, 124, 0.15)',
+  glowIndigo: 'rgba(99, 102, 241, 0.10)',
+  glowAmber: 'rgba(251, 191, 36, 0.10)',
   buttonText: '#f4fbff',
-  backgroundTop: '#f6fbff',
-  backgroundMid: '#e7f1ff',
-  backgroundBottom: '#d7e6ff',
+  backgroundTop: '#f0f8ff',
+  backgroundMid: '#e6f0fc',
+  backgroundBottom: '#d8e8f9',
   statusTrack: 'rgba(16,32,56,0.14)',
   inputFill: 'rgba(255,255,255,0.82)',
   inputEdge: 'rgba(16,32,56,0.1)',
@@ -146,4 +152,5 @@ export const tabs = [
   { key: 'clientes', label: 'Clientes' },
   { key: 'equipo', label: 'Equipo' },
   { key: 'mejoras', label: '250 mejoras' },
+  { key: 'ajustes', label: 'Ajustes' },
 ] as const;

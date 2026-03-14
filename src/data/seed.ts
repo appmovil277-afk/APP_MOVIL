@@ -170,7 +170,7 @@ const draftC: OrderDraft = {
 };
 
 const orderA = (() => {
-  let order = buildOrderFromDraft(draftA, employees, 'emp-com-1');
+  let order = buildOrderFromDraft(draftA, employees, 'emp-com-1', 0);
   order.stages[1].status = 'completed';
   order.stages[1].startedAt = new Date(Date.now() - 1000 * 60 * 60 * 42).toISOString();
   order.stages[1].completedAt = new Date(Date.now() - 1000 * 60 * 60 * 40).toISOString();
@@ -187,7 +187,7 @@ const orderA = (() => {
 })();
 
 const orderB = (() => {
-  let order = buildOrderFromDraft(draftB, employees, 'emp-com-1');
+  let order = buildOrderFromDraft(draftB, employees, 'emp-com-1', 1);
   order.stages[1].status = 'pending';
   order.pricing.finalPrice = 2240000;
   order = updateMargins(order);
@@ -199,7 +199,7 @@ const orderB = (() => {
 })();
 
 const orderC = (() => {
-  let order = buildOrderFromDraft(draftC, employees, 'emp-com-1');
+  let order = buildOrderFromDraft(draftC, employees, 'emp-com-1', 2);
   order.stages[1].status = 'completed';
   order.stages[1].startedAt = new Date(Date.now() - 1000 * 60 * 60 * 72).toISOString();
   order.stages[1].completedAt = new Date(Date.now() - 1000 * 60 * 60 * 70).toISOString();

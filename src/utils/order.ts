@@ -144,25 +144,35 @@ export function buildOrderFromDraft(
   draft: OrderDraft,
   employees: Employee[],
   createdByEmployeeId: string,
+  orderCount = 0,
+  customStages?: Array<{ role: RoleId; title: string; payout: number; payoutRule: PayoutRule }>,
 ): FurnitureOrder {
   const createdAt = new Date().toISOString();
-  const reference = `MUE-${new Date().toISOString().slice(0, 10).replace(/-/g, '')}-${Math.floor(
-    100 + Math.random() * 900,
-  )}`;
+  const reference = `#${orderCount + 1}`;
   const salesperson = employees.find((employee) => employee.id === createdByEmployeeId) ?? employees[0];
   const estimatedCost = Number(draft.estimatedCost) || 0;
 
-  const stages: WorkflowStage[] = stageBlueprints.map((blueprint, index) => {
-    const assignee =
-      blueprint.role === 'comercial'
-        ? salesperson
-        : findEmployeeByRole(employees, blueprint.role);
+  const adminEmployee = findEmployeeByRole(employees, 'administracion');
+
+  const blueprints = customStages
+    ? [stageBlueprints[0], stageBlueprints[1], ...customStages.map((s) => ({ ...s, note: '', locked: false }))]
+    : stageBlueprints;
+
+  const stages: WorkflowStage[] = blueprints.map((blueprint, index) => {
+    // Stage 0 = comercial (auto-assigned to creator), Stage 1 = admin (auto-assigned)
+    // All other stages start unassigned — admin must choose in Tareas
+    const assigneeId =
+      index === 0
+        ? salesperson.id
+        : index === 1
+          ? adminEmployee.id
+          : '';
 
     return {
       id: uid('stg'),
       title: blueprint.title,
       role: blueprint.role,
-      assigneeId: assignee.id,
+      assigneeId,
       status: index === 0 ? 'completed' : 'pending',
       payout: blueprint.payout,
       payoutRule: blueprint.payoutRule,
