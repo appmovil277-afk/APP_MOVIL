@@ -20,7 +20,7 @@
 
 ---
 
-## 📋 Tabla de Contenidos
+##  Tabla de Contenidos
 
 - [Descripción General](#-descripción-general)
 - [Características Principales](#-características-principales)
@@ -45,7 +45,7 @@
 
 ---
 
-## 🎯 Descripción General
+##  Descripción General
 
 **TallerFlow Muebles** es una aplicación móvil y web diseñada para digitalizar y optimizar la operación completa de un taller de muebles a medida. Cubre todo el ciclo de vida de un pedido: desde la captura comercial del cliente hasta la entrega final, pasando por diseño técnico, carpintería, tapicería, control de calidad y despacho.
 
@@ -64,16 +64,16 @@ La aplicación está pensada para equipos de trabajo donde cada miembro tiene un
 
 ---
 
-## ✨ Características Principales
+##  Características Principales
 
-### 📊 Dashboard Inteligente
+###  Dashboard Inteligente
 - Tarjetas KPI: pedidos activos, asignaciones, alertas sin leer, ítems urgentes
 - Acciones rápidas: nueva solicitud, mis pedidos, mis tareas
 - Vista previa de pedidos recientes con barra de progreso
 - Alertas no leídas destacadas
 - Historial operacional en tiempo real
 
-### 📝 Captura Comercial
+###  Captura Comercial
 - Formulario completo: datos del cliente (nombre, email, teléfono, ciudad)
 - Especificaciones del mueble: nombre, material (6 opciones), tamaño, almohadas
 - Costo estimado con validación de moneda colombiana (COP)
@@ -82,7 +82,7 @@ La aplicación está pensada para equipos de trabajo donde cada miembro tiene un
 - **4 plantillas de flujo de trabajo**: completo, sin diseño, solo tapicería, vacío
 - Constructor personalizado de etapas
 
-### ⚙️ Panel de Administración
+###  Panel de Administración
 - Aprobación explícita de pedidos pendientes
 - Edición de precio final, margen y costo de producción
 - Reasignación de etapas a diferentes empleados
@@ -91,20 +91,20 @@ La aplicación está pensada para equipos de trabajo donde cada miembro tiene un
 - Marcado de etapas como pagadas
 - Cambio de prioridad (Alta / Media / Baja)
 
-### 🔄 Flujo de Producción
+###  Flujo de Producción
 - Ejecución secuencial de etapas con avance automático
 - Colores por estado: pendiente (gris), activo (cian), completado (verde), bloqueado (rosa)
 - Timestamps automáticos de inicio y fin
 - Cálculo de progreso en porcentaje
 - Filtrado por rol activo
 
-### 📄 Generación de Documentos
+###  Generación de Documentos
 - PDF profesional con datos del cliente, especificaciones, costos y flujo completo
 - Compartir vía hoja de compartir nativa del dispositivo
 - Composición de email con adjunto PDF
 - Fallback `mailto:` para plataforma web
 
-### 🔔 Centro de Notificaciones
+###  Centro de Notificaciones
 - Creación automática en: creación de pedido, aprobación, inicio/fin de etapa, completado
 - Prioridades: Alta, Media, Baja
 - Canales: In-app, Push, Email, WhatsApp (preparado)
@@ -112,18 +112,18 @@ La aplicación está pensada para equipos de trabajo donde cada miembro tiene un
 - Badge con contador de no leídas
 - Navegación directa al pedido relacionado
 
-### 👥 Gestión de Equipo
+###  Gestión de Equipo
 - Directorio completo de empleados con búsqueda
 - Indicadores: disponibilidad, especialidades, tareas activas, ganancias estimadas, rendimiento
 - Configuración de métodos de pago por empleado (Nequi, Daviplata, Bancolombia)
 
-### 📈 Historial y Trazabilidad
+###  Historial y Trazabilidad
 - Pedidos completados con indicadores de pago
 - Log de auditoría automático de todas las mutaciones
 - Cola de sincronización con estado de cada operación
 - Cola de correos electrónicos con seguimiento
 
-### 🎨 Experiencia de Usuario
+###  Experiencia de Usuario
 - Diseño glassmorphism con efectos de desenfoque y gradientes
 - Tema oscuro (aurora boreal) y tema claro
 - Barra de navegación inferior estilo iPhone
@@ -132,7 +132,7 @@ La aplicación está pensada para equipos de trabajo donde cada miembro tiene un
 
 ---
 
-## 🏗 Arquitectura del Sistema
+##  Arquitectura del Sistema
 
 ```
 ┌─────────────────────────────────────────────────────────────┐
@@ -191,7 +191,7 @@ Acción del usuario
 
 ---
 
-## 📦 Modelo de Datos
+##  Modelo de Datos
 
 ### Entidades Principales
 
@@ -352,7 +352,7 @@ Margen esperado  = Precio final − Costo producción
 
 ---
 
-## 📁 Estructura del Proyecto
+##  Estructura del Proyecto
 
 ```
 app-movil/
@@ -411,7 +411,7 @@ app-movil/
 
 ---
 
-## 🛠 Stack Tecnológico
+##  Stack Tecnológico
 
 ### Frontend
 
@@ -447,7 +447,7 @@ app-movil/
 
 ---
 
-## 🚀 Instalación y Configuración
+##  Instalación y Configuración
 
 ### Requisitos Previos
 
@@ -489,7 +489,7 @@ Para iniciar sesión, selecciona cualquier perfil de la pantalla de login.
 
 ---
 
-## 📜 Scripts Disponibles
+##  Scripts Disponibles
 
 | Comando | Descripción |
 |---------|-------------|
@@ -504,7 +504,7 @@ Para iniciar sesión, selecciona cualquier perfil de la pantalla de login.
 
 ---
 
-## 🔥 Integración Firebase
+##  Integración Firebase
 
 ### Colecciones Firestore
 
@@ -544,7 +544,7 @@ allow read, write: if request.auth != null;
 
 ---
 
-## ⚡ Cloud Functions
+##  Cloud Functions
 
 ### `mailQueueCreated`
 
@@ -570,7 +570,7 @@ Registra resultado en mailQueueLogs
 
 ---
 
-## 📄 Generación de PDF y Correos
+##  Generación de PDF y Correos
 
 ### PDF
 
@@ -590,7 +590,7 @@ La app genera documentos PDF profesionales con:
 
 ---
 
-## 🔔 Sistema de Notificaciones
+## Sistema de Notificaciones
 
 ### Disparadores Automáticos
 
@@ -611,7 +611,7 @@ La app genera documentos PDF profesionales con:
 
 ---
 
-## 💾 Persistencia y Sincronización
+##  Persistencia y Sincronización
 
 ### Estrategia Local-First
 
@@ -632,7 +632,7 @@ La app genera documentos PDF profesionales con:
 
 ---
 
-## 🎨 Sistema de Diseño (UI/UX)
+##  Sistema de Diseño (UI/UX)
 
 ### Tema Oscuro (por defecto)
 
@@ -682,7 +682,7 @@ La app incluye un catálogo de **250 mejoras** organizadas en **10 categorías**
 
 ---
 
-## 🔐 Variables de Entorno
+##  Variables de Entorno
 
 Crear un archivo `.env` en la raíz del proyecto:
 
@@ -695,11 +695,11 @@ EXPO_PUBLIC_FIREBASE_MESSAGING_SENDER_ID=123456789
 EXPO_PUBLIC_FIREBASE_APP_ID=1:123456789:web:abcdef
 ```
 
-> ⚠️ **Importante**: El archivo `.env` está en `.gitignore` y no se sube al repositorio. Sin estas variables, la app funciona en modo local.
+>  **Importante**: El archivo `.env` está en `.gitignore` y no se sube al repositorio. Sin estas variables, la app funciona en modo local.
 
 ---
 
-## 📦 Despliegue
+##  Despliegue
 
 ### Web (Expo Export)
 
@@ -726,7 +726,7 @@ firebase deploy --only functions    # Cloud Functions
 
 ---
 
-## 🤝 Contribución
+##  Contribución
 
 1. Crea un fork del repositorio
 2. Crea una rama feature: `git checkout -b feature/nueva-funcionalidad`
@@ -735,7 +735,3 @@ firebase deploy --only functions    # Cloud Functions
 5. Abre un Pull Request
 
 ---
-
-<p align="center">
-  Desarrollado con ❤️ para la gestión inteligente de talleres de muebles
-</p>
